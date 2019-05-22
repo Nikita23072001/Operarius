@@ -1,0 +1,6 @@
+<h3>Offers</h3>
+<ul class="offers">
+  <li *ngFor="let Offer of offers" (click)="onSelect(Offer)">
+    <span>id: {{Offer.id}} </span> <span>title: {{Offer.title}}</span>
+  </li>
+</ul>
