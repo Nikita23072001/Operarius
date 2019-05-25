@@ -13,6 +13,7 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { OffersComponent } from './offers/offers.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { StickyFooterComponent } from './sticky-footer/sticky-footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AdminComponent,
     HomeComponent,
     OffersComponent,
-    OfferDetailComponent
+    OfferDetailComponent,
+    StickyFooterComponent
   ],
   imports: [
     BrowserModule,
