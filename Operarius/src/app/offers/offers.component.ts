@@ -1,4 +1,4 @@
-import { Offer } from './../Offer';
+import { offer } from '../offer';
 import { OFFERS } from './../mock-offer';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,13 +11,17 @@ import { Component, OnInit } from '@angular/core';
 export class OffersComponent implements OnInit {
 
   offers = OFFERS;
+  selectedOffer: offer;
 
-  selectedOffer: Offer;
-  onSelect(Offerr: Offer): void {
-    this.selectedOffer = Offerr;
-  }
+  constructor() {}
 
   ngOnInit() {
   }
+
+
+  onSelect(Offer: offer): void {
+    this.selectedOffer = Offer;
+  }
+
 
 }

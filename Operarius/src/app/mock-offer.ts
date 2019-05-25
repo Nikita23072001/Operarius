@@ -1,6 +1,6 @@
-import { Offer } from './Offer';
+import { offer } from './offer';
 
-export const OFFERS: Offer[] = [
+export const OFFERS: offer[] = [
 {id: 7, title: 'Pearls of the Deep (Perlicky na dne)', content: '', location: 'Kantharalak'},
 {id: 62, title: 'When the Last Sword is Drawn (Mibu gishi den)', content: '', location: 'Ludwin'},
 {id: 78, title: 'My Little Eye', content: '', location: 'Cimaragas'},

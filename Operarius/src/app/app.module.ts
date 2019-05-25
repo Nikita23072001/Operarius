@@ -1,3 +1,4 @@
+import { OfferDetailComponent } from './offer-detail/offer-detail.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './background/header.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { OffersComponent } from './offers/offers.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { OffersComponent } from './offers/offers.component';
     LoginComponent,
     AdminComponent,
     HomeComponent,
-    OffersComponent
+    OffersComponent,
+    OfferDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule,
     RouterModule.forRoot([
       {
         path: 'login',

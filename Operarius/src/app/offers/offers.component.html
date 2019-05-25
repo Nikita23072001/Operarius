@@ -1,6 +1,10 @@
-<h3>Offers</h3>
+<h2>My Offers</h2>
 <ul class="offers">
-  <li *ngFor="let Offer of offers" (click)="onSelect(Offer)">
-    <span>id: {{Offer.id}} </span> <span>title: {{Offer.title}}</span>
+  <li *ngFor="let Offer of offers"
+    [class.selected]="offer === selectedOffer"
+    (click)="onSelect(Offer)">
+    <span class="badge">{{Offer.id}}</span> {{Offer.title}}
   </li>
 </ul>
+ 
+<app-offer-detail [Offer]="selectedOffer"></app-offer-detail>

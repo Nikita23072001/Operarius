@@ -1,0 +1,11 @@
+<div *ngIf="Offer">
+
+  <h2>{{Offer.title | uppercase}} Title</h2>
+  <div><span>id: </span>{{Offer.id}}</div>
+  <div>
+    <label>content:
+      <input [(ngModel)]="Offer.content" placeholder="name"/>
+    </label>
+  </div>
+
+</div>
