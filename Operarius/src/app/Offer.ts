@@ -4,5 +4,4 @@ export class offer {
     title: string;
     content: string;
     location: string;
-
 }
