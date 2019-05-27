@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class OffersComponent implements OnInit {
 
   offers = OFFERS;
-  selectedOffer: offer;
+ // selectedOffer: offer;
 
   constructor() {}
 
@@ -19,9 +19,7 @@ export class OffersComponent implements OnInit {
   }
 
 
-  onSelect(Offer: offer): void {
-    this.selectedOffer = Offer;
-  }
-
-
+ // onSelect(Offer: offer): void {
+   // this.selectedOffer = Offer;
+ // }
 }
