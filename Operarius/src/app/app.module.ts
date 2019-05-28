@@ -3,8 +3,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './background/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import 'firebase/auth';
-import 'firebase/firestore';
+
 
 
 import { FormsModule } from '@angular/forms';
