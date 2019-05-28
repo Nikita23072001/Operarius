@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { OffersComponent } from './offers/offers.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { DataTablesModule } from 'angular-datatables';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DataTablesModule } from 'angular-datatables';
     AdminComponent,
     HomeComponent,
     OffersComponent,
-    OfferDetailComponent
+    OfferDetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
