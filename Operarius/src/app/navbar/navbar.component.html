@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Home</a>
+  <a class="navbar-brand" routerLink="home">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,17 +7,19 @@
   <div class="collapng se navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Offers</a>
+        <a class="nav-link" routerLink="offers">Offers</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">How it works</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">FAQ</a>
+        <a class="nav-link" routerLink="faq">FAQ</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
+      <!--
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      -->
       <li ngbDropdown class="nav-item dropdown">
         <a ngbDropdownToggle class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
