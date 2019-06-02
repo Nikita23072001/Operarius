@@ -1,9 +1,10 @@
-import { NbThemeModule, NbSidebarModule, NbLayoutModule, } from '@nebular/theme';
 import { OfferDetailComponent } from './offer-detail/offer-detail.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './background/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
+import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
+
 
 
 import { FormsModule } from '@angular/forms';
@@ -17,6 +18,9 @@ import { OffersComponent } from './offers/offers.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { DataTablesModule } from 'angular-datatables';
 import { FooterComponent } from './footer/footer.component';
+import { FAQComponent } from './faq/faq.component';
+import { HttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,16 +32,24 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     OffersComponent,
     OfferDetailComponent,
-    FooterComponent  ],
+    FooterComponent,
+    FAQComponent,
+    HttpClient
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    NbLayoutModule,
-    NbSidebarModule,
     DataTablesModule,
-    NbThemeModule.forRoot(),
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+        }),
+      ],
+      forms: {},
+    }),
     RouterModule.forRoot([
       {
         path: 'login',
