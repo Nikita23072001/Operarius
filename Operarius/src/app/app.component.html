@@ -1,11 +1,7 @@
-<app-navbar></app-navbar>
-<app-header></app-header>
-<!-- 
-    <app-offers></app-offers> 
--->
-<router-outlet></router-outlet>
-
-<app-footer></app-footer>
-
-
-
+<nb-layout>
+        <nb-layout-header fixed>{{title}}</nb-layout-header>
+      
+        <nb-sidebar>Sidebar Content</nb-sidebar>
+      
+        <nb-layout-column>Page Content</nb-layout-column>
+      </nb-layout>

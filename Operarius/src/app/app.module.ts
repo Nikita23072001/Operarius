@@ -1,9 +1,9 @@
+import { NbThemeModule, NbSidebarModule, NbLayoutModule, } from '@nebular/theme';
 import { OfferDetailComponent } from './offer-detail/offer-detail.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './background/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-
 
 
 import { FormsModule } from '@angular/forms';
@@ -17,7 +17,6 @@ import { OffersComponent } from './offers/offers.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { DataTablesModule } from 'angular-datatables';
 import { FooterComponent } from './footer/footer.component';
-import { FAQComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -29,15 +28,16 @@ import { FAQComponent } from './faq/faq.component';
     HomeComponent,
     OffersComponent,
     OfferDetailComponent,
-    FooterComponent,
-    FAQComponent
-  ],
+    FooterComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    NbLayoutModule,
+    NbSidebarModule,
     DataTablesModule,
+    NbThemeModule.forRoot(),
     RouterModule.forRoot([
       {
         path: 'login',
