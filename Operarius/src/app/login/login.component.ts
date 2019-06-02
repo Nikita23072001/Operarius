@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,14 +6,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit   {
+  constructor( private  authService: AuthService) { }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-  loginUser(event) {
-    event.preventDefault()
-    console.log(event);
-  }
+    ngOnInit() {}
 }
