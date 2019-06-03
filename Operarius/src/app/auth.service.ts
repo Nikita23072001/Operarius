@@ -10,6 +10,7 @@ export class AuthService {
   constructor() { }
   changeCollapsed(){
     this.isCollapsed.next(!this.isCollapsed);
+     
     
   }
   getUserDetails() {
