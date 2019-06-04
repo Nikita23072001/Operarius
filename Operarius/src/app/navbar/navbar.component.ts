@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../auth.service"
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  collapsed:boolean;
+  constructor(private data: AuthService) {
+   }
 
   ngOnInit() {
+    this.data.currentIsCollapsed.subscribe(collapsed => this.collapsed = collapsed);
   }
-
+  changeCollapse(){
+    this.data.changeCollapsed();
+  }
 }
