@@ -18,6 +18,7 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { DataTablesModule } from 'angular-datatables';
 import { FooterComponent } from './footer/footer.component';
 import { FAQComponent } from './faq/faq.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FAQComponent } from './faq/faq.component';
     OffersComponent,
     OfferDetailComponent,
     FooterComponent,
-    FAQComponent
+    FAQComponent,
+    HowItWorksComponent
   ],
   imports: [
     BrowserModule,
