@@ -1,7 +1,8 @@
-import { offer } from '../offer';
-import { OFFERS } from './../mock-offer';
+import { OfferService } from 'src/app/shared/offer.service';
+import { offer } from './Offer';
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../auth.service"
+import {AuthService} from '../auth.service';
+import { Offer } from '../shared/offer.model';
 
 @Component({
   selector: 'app-offers',
@@ -9,16 +10,20 @@ import {AuthService} from "../auth.service"
   styleUrls: ['./offers.component.css']
 })
 export class OffersComponent implements OnInit {
-  
-  offers = OFFERS;
- // selectedOffer: offer;
-  collapsed :Boolean;
-  constructor(private data: AuthService) {
-    
+  list: Offer[];
+
+  constructor(private service: OfferService) {
   }
 
   ngOnInit() {
-    this.data.currentIsCollapsed.subscribe(collapsed => this.collapsed = collapsed)
+    this.service.getOffers().subscribe(actionArray => {
+    this.list = actionArray.map(item => {
+      return {
+        id: item.payload.doc.id,
+        ...item.payload.doc.data() } as Offer;
+    // tslint:disable-next-line:semicolon
+    })
+    });
   }
 
 

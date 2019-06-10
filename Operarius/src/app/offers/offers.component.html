@@ -7,14 +7,16 @@
     <th>Title</th>
     <th>Content</th>
     <th>Location</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let Offer of offers">
+  <tr *ngFor="let Offer of list">
     <td>{{Offer.id}}</td>
     <td>{{Offer.title}}</td>
     <td>{{Offer.content}}</td>
     <td>{{Offer.location}}</td>
+    <td><a class="btn text-danger">Chat<i class="fa fa-trash"></i></a></td>
     </tr>
   </tbody>
 </table>
