@@ -6,12 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   private isCollapsed = new BehaviorSubject(true);
-  currentIsCollapsed = this.isCollapsed.asObservable()
+  currentIsCollapsed = this.isCollapsed.asObservable();
   constructor() { }
-  changeCollapsed(){
+  changeCollapsed() {
     this.isCollapsed.next(!this.isCollapsed);
-     
-    
   }
   getUserDetails() {
   }
