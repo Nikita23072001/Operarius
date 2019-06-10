@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.data.currentIsCollapsed.subscribe(collapsed => this.collapsed = collapsed);
   }
-  changeCollapse(){
+  changeCollapse() {
     this.data.changeCollapsed();
   }
 }
