@@ -26,6 +26,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
     FooterComponent,
     FAQComponent,
     OfferComponent,
-    HowItWorksComponent
+    HowItWorksComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
