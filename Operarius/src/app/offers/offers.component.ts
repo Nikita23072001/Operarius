@@ -1,7 +1,6 @@
 import { OfferService } from 'src/app/shared/offer.service';
 import { offer } from './Offer';
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../auth.service';
 import { Offer } from '../shared/offer.model';
 
 @Component({

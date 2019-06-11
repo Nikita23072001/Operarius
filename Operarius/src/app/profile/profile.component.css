@@ -5,4 +5,6 @@ hr,
 .form-group{
     color:white;
 }
-
+* {
+    font-size: 98%;
+}
