@@ -16,12 +16,12 @@ import { SigninComponent } from './signin/signin.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'faq', component: FAQComponent },
-  { path: 'sign-in', component: SigninComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'sign-in', component: SigninComponent},
   { path: 'offers', component: OffersComponent },
   { path: 'new-offer', component:  OfferComponent},
   { path: 'profile', component:  ProfileComponent},
   { path: 'how-it-works', component: HowItWorksComponent },
-  { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'register-user', component: SignUpComponent},
 { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
 { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] }
 ];
