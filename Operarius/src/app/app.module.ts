@@ -1,3 +1,5 @@
+import { SecureInnerPagesGuard } from './shared/guard/secure-inner-pages.guard.ts.guard';
+import { AuthGuard } from './shared/guard/auth.guard';
 import { SigninComponent } from './signin/signin.component';
 import { ForgotPasswordComponent } from './forrgot-password/forrgot-password.component';
 import { AngularFireModule } from '@angular/fire';
@@ -6,9 +8,8 @@ import { HeaderComponent } from './background/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
-
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './admin/admin.component';
@@ -34,6 +35,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './shared/services/auth.service';
 import { SignUpComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NgxChatUiModule } from 'ngx-chat-ui';
+import { DROPZONE_CONFIG, DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -45,6 +51,12 @@ export const firebaseConfig = {
   storageBucket: 'operarius-3f1cb.appspot.com',
   messagingSenderId: '680782784545',
   appId: '1:680782784545:web:a0893c864505ee5f'
+};
+
+
+const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
+  url: '/',
+  acceptedFiles: 'image/*',
 };
 
 @NgModule({
@@ -64,12 +76,15 @@ export const firebaseConfig = {
     SignUpComponent,
     ForgotPasswordComponent,
     SigninComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    UserProfileComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    NgxChatUiModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
@@ -90,7 +105,11 @@ export const firebaseConfig = {
       }
     ])
   ],
-  providers: [OfferService, AngularFirestore, AuthService, AngularFireAuth],
+  providers: [OfferService, AngularFirestore, AuthService, AngularFireAuth, AuthGuard, SecureInnerPagesGuard, {
+    provide: DROPZONE_CONFIG,
+    useValue: DEFAULT_DROPZONE_CONFIG
+  }
+],
   bootstrap: [AppComponent,
   NavbarComponent,
 HeaderComponent]

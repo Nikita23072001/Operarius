@@ -1,6 +1,7 @@
+import { RouterModule, Router } from '@angular/router';
 import { OfferService } from 'src/app/shared/offer.service';
 import { offer } from './Offer';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer } from '@angular/core';
 import { Offer } from '../shared/offer.model';
 
 @Component({
@@ -10,8 +11,8 @@ import { Offer } from '../shared/offer.model';
 })
 export class OffersComponent implements OnInit {
   list: Offer[];
-
-  constructor(private service: OfferService) {
+  dtOptions: DataTables.Settings = {};
+  constructor(private service: OfferService, private renderer: Renderer, private router: Router) {
   }
 
   ngOnInit() {
@@ -23,7 +24,28 @@ export class OffersComponent implements OnInit {
     // tslint:disable-next-line:semicolon
     })
     });
+
+    this.dtOptions = {
+      ajax: 'data/data.json',
+      columns: [{
+        title: 'ID',
+        data: 'id'
+      }, {
+        title: 'First name',
+        data: 'firstName'
+      }, {
+        title: 'Last name',
+        data: 'lastName'
+      }, {
+        title: 'Action',
+        render(data: any, type: any, full: any) {
+          return 'View';
+        }
+      }]
+    };
   }
+
+  // tslint:disable-next-line:use-life-cycle-interface
 
 
  // onSelect(Offer: offer): void {
