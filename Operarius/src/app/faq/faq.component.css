@@ -5,14 +5,15 @@ h1 {
     color: blanchedalmond;
 }
 h2{
-    color: silver
+    color: silver;
 }
 h3{
     font-size: 18px;
-    color: silver
+    color: silver;
+    text-align:left
 }
 p{
-    font-size: 14px
+    font-size: 14px;
 }
 
 /*pp-footer{
