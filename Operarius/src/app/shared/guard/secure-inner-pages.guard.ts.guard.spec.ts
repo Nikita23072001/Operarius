@@ -14,10 +14,11 @@ canActivate(
 next: ActivatedRouteSnapshot,
 state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 if (this.authService.isLoggedIn) {
-window.alert('You are not allowed to access this URL!');
-// tslint:disable-next-line:semicolon
-this.router.navigate(['home'])
+    return true;
+} else {
+    window.alert('You are not allowed to access this URL!');
+    this.router.navigate(['home']);
 }
-return true;
+
 }
 }

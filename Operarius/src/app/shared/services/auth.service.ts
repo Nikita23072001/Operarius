@@ -26,8 +26,7 @@ JSON.parse(localStorage.getItem('user'));
 localStorage.setItem('user', null);
 JSON.parse(localStorage.getItem('user'));
 }
-// tslint:disable-next-line:semicolon
-})
+});
 }
 // Sign in with email/password
 SignIn(email, password) {
@@ -38,10 +37,8 @@ this.router.navigate(['home']);
 });
 this.SetUserData(result.user);
 }).catch((error) => {
-// tslint:disable-next-line:semicolon
-window.alert(error.message)
-// tslint:disable-next-line:semicolon
-})
+window.alert(error.message);
+});
 }
 // Sign up with email/password
 SignUp(email, password) {
@@ -60,8 +57,7 @@ SendVerificationMail() {
 return this.afAuth.auth.currentUser.sendEmailVerification()
 .then(() => {
 this.router.navigate(['verify-email-address']);
-// tslint:disable-next-line:semicolon
-})
+});
 }
 // Reset Forggot password
 ForgotPassword(passwordResetEmail) {
@@ -69,16 +65,14 @@ return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
 .then(() => {
 window.alert('Password reset email sent, check your inbox.');
 }).catch((error) => {
-// tslint:disable-next-line:semicolon
-window.alert(error)
-// tslint:disable-next-line:semicolon
-})
+window.alert(error);
+});
 }
 // Returns true when user is looged in and email is verified
 get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
-    }
+const user = JSON.parse(localStorage.getItem('user'));
+return (user !== null && user.emailVerified !== false) ? true : false;
+}
 // Sign in with Google
 GoogleAuth() {
 return this.AuthLogin(new auth.GoogleAuthProvider());
@@ -89,14 +83,11 @@ return this.afAuth.auth.signInWithPopup(provider)
 .then((result) => {
 this.ngZone.run(() => {
 this.router.navigate(['home']);
-// tslint:disable-next-line:semicolon
-})
+});
 this.SetUserData(result.user);
 }).catch((error) => {
-// tslint:disable-next-line:semicolon
-window.alert(error)
-// tslint:disable-next-line:semicolon
-})
+window.alert(error);
+});
 }
 /* Setting up user data when sign in with username/password,
 sign up with username/password and sign in with social auth
@@ -109,12 +100,10 @@ email: user.email,
 displayName: user.displayName,
 photoURL: user.photoURL,
 emailVerified: user.emailVerified
-// tslint:disable-next-line:semicolon
-}
+};
 return userRef.set(userData, {
 merge: true
-// tslint:disable-next-line:semicolon
-})
+});
 }
 // Sign out
 SignOut() {

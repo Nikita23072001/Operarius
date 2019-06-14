@@ -44,7 +44,7 @@ window.alert(error.message)
 })
 }
 // Sign up with email/password
-SignUp(email, password) {
+SignUp( email, password) {
 return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
 .then((result) => {
 /* Call the SendVerificaitonMail() function when new user sign
